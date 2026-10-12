@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFSoC Hardware Thermal Management | Nikolas Gianulis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Parallax Star Layers -->
+    <div class="parallax-bg" id="bg-far"></div>
+    <div class="parallax-bg" id="bg-mid"></div>
+    <div class="parallax-bg" id="bg-near"></div>
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        NG
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Back to Projects</a></li>
+        </ul>
+    </nav>
+
+    <main class="case-study">
+        <header class="project-header">
+            <h1>RFSoC Hardware Thermal Management</h1>
+            <p class="tech-stack">Keywords: SolidWorks | Thermal Management | Heatsink Design | CCAT Observatory</p>
+        </header>
+
+        <section class="project-content">
+            <h3>Introduction to the Thermal Challenge</h3>
+            <p>The Fred Young Submillimeter Telescope (FYST) is a major international collaboration located on Cerro Chajnantor in the Atacama Desert in Chile. While the observatory is deployed in South America, its primary camera component, PrimeCam, was assembled at Cornell University. Working with the Niemack Group, I collaborated with a cross-functional team to assemble and test PrimeCam's complex hardware architecture.</p>
+            
+            <p>PrimeCam utilizes state of the art Kinetic-Inductance Detectors (KIDs) that require an extreme base thermal level of less than 100 millikelvin (-273.05&deg;C). To interface with these detectors, the lab utilizes Radio Frequency System-on-Chip (RFSoC) technology, which is capable of processing and monitoring thousands of individual KID channels simultaneously. PrimeCam will ultimately use roughly 25 of these RFSoCs to manage the KIDs inside the telescope.</p>
+            
+            <p>During the testing phase of a scaled-down version of the camera called ModCam, which utilized only five RFSoCs, we encountered a critical thermal bottleneck. The RFSoCs were organized directly on top of one another on rack shelves. This caused severe heat build-up, pushing hardware temperatures to a dangerous 90&deg;C. In the long term, these thermal extremes would permanently damage the components, and replacing them at the high-altitude Atacama site would be a logistical challenge. While a temporary fan system successfully brought temperatures down, a sustainable, passive cooling solution was required for the final deployment.</p>
+
+            <h3>Mechanical & Thermal Design</h3>
+            <p>The root of the problem was the existing rack shelving, which severely restricted airflow between the RFSoCs and was coated in a paint that insulated rather than conducted heat. To solve this, I designed a completely custom RFSoC mount in SolidWorks. Rather than resting the units on a shelf, the new mount integrated directly with the RFSoC to save vertical space. The custom bracket secured to the back of the RFSoC and mounted directly to the rack, utilizing the hardware's existing front-screw layout.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/plate.png" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">SolidWorks drawing of the heat sink plate</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/angle.png" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">SolidWorks drawing of the plate connector to the rack</figcaption>
+                </figure>
+            </div>
+            <p>To maximize passive cooling, I included heatsink fins that can attach directly on the RFSoCs. This optimized thermal dissipation and spread the heat through the rack without relying entirely on active fan cooling. I also incorporated a specialized notch at the rear of the mount to cleanly and safely route the heavy power cables required by the RFSoCs.</p>
+
+            <h3>Implementation and Results</h3>
+            <p>The new structural design was highly successful, dropping the RFSoC baseline temperatures significantly to approximately 60&deg;C. When paired with the existing fan system, the operating temperatures dropped even further, providing a safe, long-term thermal baseline that ensures hardware survivability in the field.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6528.jpeg" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">RFSoC rack with old shelves</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6604.jpeg" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">RFSoC rack with new heatsink mount implemented</figcaption>
+                </figure>
+            </div>
+            <p>This project presented unique mechanical engineering challenges compared to my previous work. Because there were no pre-existing CAD files for the server rack or the RFSoCs readily available, I could not build upon previous models. Instead, I had to take precise manual measurements and build the digital models entirely from scratch in SolidWorks. Ultimately, this experience deepened my understanding of effective thermal management, spatial constraints, and the practical engineering of custom heatsinks.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: nikolasgianulis@gmail.com | (786)-608-5581</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

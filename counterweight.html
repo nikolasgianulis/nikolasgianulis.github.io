@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeCam Counterweight Frame Design | Nikolas Gianulis</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- MathJax Configuration to render LaTeX equations -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <!-- Parallax Star Layers -->
+    <div class="parallax-bg" id="bg-far"></div>
+    <div class="parallax-bg" id="bg-mid"></div>
+    <div class="parallax-bg" id="bg-near"></div>
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        NG
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Back to Projects</a></li>
+        </ul>
+    </nav>
+
+    <main class="case-study">
+        <header class="project-header">
+            <h1>PrimeCam Counterweight Frame Design</h1>
+            <p class="tech-stack">Keywords: SolidWorks | Structural Engineering | Load-Bearing Mechanics | CCAT Observatory</p>
+        </header>
+
+        <section class="project-content">
+            <h3>Introduction to PrimeCam's Assembly Challenge</h3>
+            <p>The Fred Young Submillimeter Telescope (FYST) is a major collaborative observatory located on Cerro Chajnantor in the Atacama Desert in Chile. While the observatory operates in South America, its primary camera component, PrimeCam, was assembled at Cornell University. As a researcher in the Niemack Group, I collaborated with a cross-functional team to assemble and structurally validate this state of the art instrument.</p>
+            
+            <p>PrimeCam utilizes Kinetic-Inductance Detectors (KIDs) that require an extreme base thermal level of less than 100 millikelvin ($-273.05^\circ\text{C}$). To achieve this, the camera relies on multiple cooling units, including two Pulse Tube Cryocoolers and a Dilution Refrigerator. These cooling stages are enclosed within multiple nested vacuum shells, similar to Russian nesting dolls, for each temperature level. The outermost shell is a massive cylinder measuring roughly two meters in length and one meter in diameter. Each interior shell weighs hundreds of kilograms and requires absolute precision during handling. The outermost shell must maintain a perfect vacuum seal, and any damage to the ends or warping of the cylinder could cost hundreds of thousands of dollars and set the project back by years.</p>
+            
+            <p>Due to PrimeCam’s intricate design, assembly required us to start from the outside and sequentially insert the interior shells. This presented a significant mechanical hurdle. While our lab was equipped with a crane capable of lifting the massive components, the crane could not maintain its grip once a shell was being inserted into the exterior housing. With edge to edge clearances of only 2 to 3 inches between the nested cylinders, we needed a precise, custom tooling solution to safely guide and support the shells into place.</p>
+
+            <h3>Mechanical Design</h3>
+            <p>To solve this assembly bottleneck, I co-designed a custom counterweight frame alongside PhD candidate Rodrigo Freundt. Using SolidWorks, I engineered an adapting frame specifically to fit the 4K shell, which alone weighed over 100 kilograms. Because the frame had to safely cantilever this immense weight alongside the counterweight itself, material selection was critical. I utilized steel bars for the primary structural members due to their superior yield strength and resistance to shear stress compared to aluminum. However, we integrated a thick aluminum plate to mount the larger counterweight system onto the adapting frame, reinforced with structural gussets to maximize load stability.</p>
+
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_7741.PNG" alt="SolidWorks Render of the Counterweight Frame" class="alpha-img">
+                    <figcaption class="image-caption">SolidWorks assembly of the adapting frame, aluminum mounting plate, and structural gussets.</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6253.jpeg" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">The rest of the counterweight frame, fitted with a weight plate holder on the right end. The adapter frame would be screwed in on the left end.</figcaption>
+                </figure>
+            </div>
+            
+            <p>A primary mechanical concern was protecting the delicate 4K shell. Because the shell was machined from softer aluminum, the sheer force of a 100+ kg cantilevered load threatened to strip or deform its tapped mounting holes. To mitigate this risk, the adapting frame was designed to maximize load distribution, utilizing eight separate mounting screws on the 4K shell to safely split the mechanical strain. Additionally, I implemented slotted mounting holes on the frame to provide geometric versatility and tolerance relief in case the massive aluminum shells possessed slight manufacturing deviations from a perfect cylinder.</p>
+
+            <h3>Implementation and Results</h3>
+            <p>The custom frame performed exactly as engineered, allowing our team to safely and seamlessly add and remove the 4K shell from the PrimeCam assembly. The load distribution strategy was highly successful, with the aluminum tapped holes sustaining the full weight of the shell and counterweight system without any stripping, warping, or damage.</p>
+             <img src="images/IMG_7747.PNG" alt="KID System" class="alpha-img">
+            <figcaption class="image-caption">Seen here is the counterweight frame being used to lift the 4K Shell</figcaption>
+            
+
+            <p>Ultimately, this project provided invaluable hands-on experience in load-bearing mechanical design using SolidWorks. It highlighted the importance of structural risk mitigation, material stress analysis, and cross-functional collaboration when engineering support hardware for large-scale, high-stakes instrumentation.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: nikolasgianulis@gmail.com | (786)-608-5581</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

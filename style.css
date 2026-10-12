@@ -1,0 +1,374 @@
+/* =========================================
+   1. Base Styles & Theme Variables
+========================================= */
+:root {
+    --bg-color: #070b19; /* Deeper space navy */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --card-bg: rgba(30, 41, 59, 0.85); /* Slightly translucent for stars */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. Parallax Star Layers
+========================================= */
+.parallax-bg {
+    position: fixed;
+    top: -50%; 
+    left: 0;
+    width: 100%;
+    height: 200%; 
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: repeat; 
+    will-change: transform; 
+}
+
+#bg-far {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 15% 25%, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 35% 75%, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 75% 15%, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 85% 85%, #ffffff, transparent),
+        radial-gradient(2px 2px at 55% 55%, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 25% 95%, #ffffff, transparent);
+    background-size: 300px 300px; 
+    opacity: 0.3;
+}
+
+#bg-mid {
+    background-image: 
+        radial-gradient(3px 3px at 10% 10%, #38bdf8, transparent),
+        radial-gradient(2px 2px at 40% 30%, #ffffff, transparent),
+        radial-gradient(3px 3px at 80% 60%, #ffffff, transparent),
+        radial-gradient(3px 3px at 30% 80%, #38bdf8, transparent),
+        radial-gradient(2px 2px at 90% 20%, #ffffff, transparent);
+    background-size: 500px 500px;
+    opacity: 0.6;
+}
+
+#bg-near {
+    background-image: 
+        radial-gradient(4px 4px at 20% 50%, #ffffff, transparent),
+        radial-gradient(15px 15px at 20% 50%, rgba(56, 189, 248, 0.3), transparent),
+        radial-gradient(4px 4px at 70% 20%, #ffffff, transparent),
+        radial-gradient(6px 6px at 85% 80%, #38bdf8, transparent),
+        radial-gradient(18px 18px at 85% 80%, rgba(56, 189, 248, 0.2), transparent),
+        radial-gradient(ellipse 10px 1.5px at 40% 90%, #ffffff, transparent),
+        radial-gradient(ellipse 1.5px 10px at 40% 90%, #ffffff, transparent);
+    background-size: 700px 700px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   3. Navigation
+========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 5%;
+    background-color: rgba(7, 11, 25, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* =========================================
+   4. Hero Section & Buttons
+========================================= */
+.hero {
+    text-align: center;
+    padding: 7rem 5% 5rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+
+.hero h2 {
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 2rem; /* Add this line to make it larger but smaller than the 3.2rem h1 */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+    margin-top: 0px;
+    line-height: 1;
+}
+
+.btn {
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: #070b19;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+/* =========================================
+   5. Grid Sections (Projects & Skills)
+========================================= */
+.projects-section, .skills-section {
+    padding: 4rem 5%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.projects-section h2, .skills-section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.project-grid, .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem;
+}
+
+.project-card, .skill-category {
+    background-color: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent);
+    border-left: 1px solid rgba(56, 189, 248, 0.1);
+    border-right: 1px solid rgba(56, 189, 248, 0.1);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: letter-spacing 0.2s;
+}
+
+.read-more:hover {
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   6. Case Study Layout & Typography
+========================================= */
+.case-study {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.tech-stack {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    padding-bottom: 1rem;
+}
+
+.project-content h3 {
+    margin-top: 2.5rem;
+    color: var(--text-main);
+}
+
+.project-content p {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   7. Images, Columns & Captions
+========================================= */
+/* Shared Base Styles for all images */
+.zeeman-img, .alpha-img {
+    display: block; 
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+.profile-img {
+    display: block; 
+    margin: 0 auto;
+    object-fit: cover;
+    /* X-axis (horizontal) is 70%, Y-axis (vertical) is 20% */
+    object-position: 70% 10%; 
+    border-radius: 1000px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 300px; 
+    height: 300px; 
+    max-width: 100%;
+}
+
+.profile-img-two {
+    display: block; 
+    margin: 0 auto;
+    object-fit: cover;
+    /* X-axis (horizontal) is 70%, Y-axis (vertical) is 20% */
+    /* object-position: 70% 10%;  */
+    object-position: 70% 70%; 
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 600px; 
+    height: 400px; 
+    max-width: 100%;
+}
+.zeeman-img { width: 400px; height: 600px; }
+.alpha-img { height: 300px; } /* Default height if not in a column */
+
+.primecam-img { 
+    display: block; 
+    margin: 0 auto;
+    object-fit: cover;
+    /* X-axis (horizontal) is 70%, Y-axis (vertical) is 20% */
+    /* object-position: 70% 10%;  */
+    border-radius: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 600px; 
+    height: 600px; 
+    max-width: 100%;
+}
+
+/* Standalone Caption */
+.image-caption {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 0.8rem auto 2rem;
+    max-width: 400px;
+}
+
+/* Side-by-Side Image Row Container */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This vertically centers the images with each other */
+    gap: 2rem;
+    margin: 2rem auto;
+}
+
+/* Individual Column within the Row */
+.image-col {
+    margin: 0;
+    flex: 1; 
+    max-width: 48%; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Overrides for images and captions inside a column */
+.image-col .alpha-img {
+    width: 100%;
+    height: auto;
+}
+
+.image-col .image-caption {
+    width: 100%;
+    max-width: none;
+    margin-top: auto; /* Pushes the caption to the bottom of the column */
+    margin-bottom: 0;
+    padding-top: 0.8rem; /* Adds the spacing back above the text */
+}
+
+/* =========================================
+   8. Footer
+========================================= */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(56, 189, 248, 0.1);
+    margin-top: 4rem;
+    background-color: rgba(7, 11, 25, 0.8);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   9. Mobile Responsiveness
+========================================= */
+@media (max-width: 768px) {
+    /* Collapse grids to single column */
+    .project-grid, .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack image rows */
+    .image-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .image-col {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+}

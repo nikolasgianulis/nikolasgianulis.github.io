@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zotefoam RT-MLI Thermal Characterization | Nikolas Gianulis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Parallax Star Layers -->
+    <div class="parallax-bg" id="bg-far"></div>
+    <div class="parallax-bg" id="bg-mid"></div>
+    <div class="parallax-bg" id="bg-near"></div>
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        NG
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Back to Projects</a></li>
+        </ul>
+    </nav>
+
+    <main class="case-study">
+        <header class="project-header">
+            <h1>Zotefoam RT-MLI Thermal Performance</h1>
+            <p class="tech-stack">Keywords: Cryogenics | Bluefors Dilution Refrigerator | SolidWorks | Zotefoam | Thermal Analysis</p>
+            <!-- PDF Link Button -->
+            <a href="RT-MLI Experimental Notes_3.pdf" target="_blank" class="btn" style="margin-top: 1rem; display: inline-block;">View Experimental Notes (PDF)</a>
+        </header>
+
+        <section class="project-content">
+            <h3>Introduction</h3>
+            <p>The Fred Young Submillimeter Telescope (FYST) is a collaboration of multiple universities and institutions located on Cerro Chajnantor in the Atacama Desert in Chile. While the observatory is based in Chile, its main camera component, PrimeCam, was assembled at Cornell University. I worked for the Niemack Group at Cornell, which was one of the many groups collaborating to assemble and test PrimeCam.</p>
+            
+            <p>PrimeCam uses state of the art Kinetic-Inductance Detectors (KIDs) which require a base thermal level of less than 100 millikelvin (100 mK is equivalent to -273.05&deg;C). To achieve this extreme temperature, PrimeCam utilizes multiple cooling units, including two Pulse Tube Cryocoolers and a Dilution Refrigerator. A major challenge in achieving this temperature is allowing incoming light and radiation to be detected by the KIDs while simultaneously providing proper insulation so that the telescope's core remains cold. Radio-Transmitting Multi-Layer Insulation (RT-MLI) serves as a potential solution to this problem.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/KID.png" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">Kinetic-Inductance Detector (KID)</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6536.png" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">BluesFors SD Dillution Refrigerator with all shells removed. The lowest plate is the Mixing Chamber Flange.</figcaption>
+                </figure>
+            </div>
+            <p>In this project, I was tasked with testing the thermal performance of a polyethylene foam (Zotefoam Plastazote LD30) and comparing it to that of a higher-density polyethylene foam (Zotefoam Plastazote HD30) across different stack thicknesses. The goal was to optimize both thermal insulation and radio transparency.</p>
+            
+            <h3>Apparatus and Setup</h3>
+            <p>Using a Bluefors SD Dilution Refrigerator (SD DR), we simulated the conditions inside the telescope, integrating a KID to test the transmittance of the filters. Because the interior is a vacuum, pressure changes must be strictly managed, as the fragile filters can easily be destroyed if the pressure changes too rapidly. The different stack thicknesses refer to the specific temperature stages to which each RT-MLI filter stack is attached. There are four main temperature stages to focus on: the 300K outer shell (room temperature), the 40K shell, the 4K shell, and the Mixing Chamber Flange, which reaches a temperature of ~35 mK.</p>
+            
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/KIDSDDR.jpeg" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">KID mounted onto the bottom of the Mixing Chamber Flange</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_7739.PNG" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">Crosssection of SD Dillution Refrigerator with Shells and Modifications in SolidWorks</figcaption>
+                </figure>
+            </div>
+            
+            <p>Filters were attached to the 300K and 40K shells to best simulate their placement in PrimeCam. To test different combinations of stack thickness, we started with 2-inch stacks on both the 300K and 40K stages, with plans to test 3-inch/1-inch and 1-inch/3-inch configurations. Using SolidWorks, I designed an adaptable plate and container that could be easily screwed into the bottom plates of the SD DR, as well as a bottom plate with an attachable window to maintain the vacuum seal. Our setup consisted of the modified SD DR featuring an optical opening, Zotefoam filters attached in the path of the opening on the 300K and 40K stages, and the KID mounted on the Mixing Chamber Flange.</p>
+            
+
+            <img src="images/solidworksdiagram.png" alt="KID System" class="alpha-img">
+            <figcaption class="image-caption">Close up of modifications made to SD DR. When testing filters the blankoff plates would be removed with the 4K blankoff being replaced by a nylon plastic window in order to prevent 40K radiation from reaching the Mixing Chamber Flange</figcaption>
+            
+            <p>We utilized four thermometers connected to the 40K stage, 4K stage, Still Flange, and Mixing Chamber Flange to monitor any temperature changes due to incoming radiation. To test the thermal performance of the filter configurations, we placed a piece of Ecosorb under the SD DR window to act as a source of uniform blackbody radiation. By swapping the Ecosorb between an open container of liquid nitrogen (~80K) and room temperature (300K), we monitored temperature shifts in the Mixing Chamber Flange. To determine the transmission of the filters, our KID was connected to the Mixing Chamber coax cable, and a Radio Frequency System-on-Chip (RFSoC) was used to send and receive signals to and from the KID.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/300KFilters.png" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">Zotefoam LD30 2 inch thick filter stack mounted on the 300K bottom plate</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/40KFilters.png" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">Zotefoam LD30 2 inch thick filter stack mounted on the 40K modified bottom</figcaption>
+                </figure>
+            </div>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                <img src="images/IMG_6642.png" alt="KID System" class="alpha-img">
+                <figcaption class="image-caption">Bottom view of the SD DR with the 40K bottom mounted and no 300K bottom.</figcaption>
+            
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6923.png" alt="KID System" class="alpha-img">
+            <figcaption class="image-caption">Container with Liquid Nitrogen and Ecosorb inside placed directly under 300K window</figcaption>
+            
+                </figure>
+            </div>
+            
+            <h3>Results and Discussion</h3>
+            <p>Throughout the testing phase, we continuously monitored four main thermometers: CH1 (40K Flange), CH2 (4K Flange), CH5 (Still Flange), and CH6 (Mixing Chamber Flange).</p>
+            <ul>
+                <li><strong>Hardware Optimization:</strong> Early cooldown attempts revealed the SD DR was failing to reach base temperatures because an optical gap in the 4K and 40K shells allowed 300K room-temperature radiation to directly hit the Mixing Chamber Flange. I installed custom blankoff plates and a 4K filter with a ring clamp to eliminate this radiation leak.</li>
+                <li><strong>Baseline Testing:</strong> Testing began with 2-inch Zotefoam stacks, comprising 13 layers (1.9 inches) at the 300K stage and 12 layers (1.8 inches) at the 40K stage. By setting the Still heater to 20% to optimize cooling power and applying a 70K Ecosorb, the Mixing Chamber reached an ultra-cold baseline of 36.2 mK.</li>
+                <li><strong>Material Damage & Pressurization:</strong> During a later cycle, the SD DR was pressurized using the vent instead of the precise needle valve, which severely damaged the filters at the 40K stage, permanently compressing them from 1.91 inches down to 1.51 inches. </li>
+                <li><strong>Thinner Configurations:</strong> Following the damage, we evaluated a 1-inch configuration featuring 7 layers of foam on both the 300K and 40K stages. With an 80K Ecosorb and a 20% Still heater, the Mixing Chamber maintained stable temperatures between 42.5 mK and 43.8 mK. We subsequently prepared a thinner 0.54-inch (4-layer) stack for the 40K stage, and eventually switched to High Density (HD30) Zotefoam to evaluate its structural improvements.</li>
+            </ul>
+            
+            <h3>Conclusion</h3>
+            <p>When I switched to the higher-density foam, there was no significant change in the thermal performance compared to the lower-density variant. A potential pitfall during data collection was the limited amount of time the 80K Ecosorb could remain under the window. Due to the liquid nitrogen evaporating quickly, I was limited in how long the Ecosorb could be applied before needing a refill. Keeping the Ecosorb in place for longer would allow us to observe a more consistent and accurate temperature, enabling a precise determination of the total temperature shift in the Mixing Chamber Flange.</p>
+            
+            <p>In terms of transmission, both foams successfully transmitted the expected frequencies to the KID. Despite no significant change in thermal efficiency between the two variants, the experiments demonstrated the capabilities of Zotefoam Plastazote as a highly viable material for RT-MLI. The higher-density foam provided substantially more stability and rigidity compared to the softer, lower-density foam, all while providing similar thermal performance—making it much better suited to withstand the rapid pressure changes inherent to cryogenic vacuum environments.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: nikolasgianulis@gmail.com | (786)-608-5581</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeCam Multi-Layer Insulation Installation | Nikolas Gianulis</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- MathJax Configuration to render LaTeX equations -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+    <!-- Parallax Star Layers -->
+    <div class="parallax-bg" id="bg-far"></div>
+    <div class="parallax-bg" id="bg-mid"></div>
+    <div class="parallax-bg" id="bg-near"></div>
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html';" style="cursor: pointer;">
+        NG
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#projects">Back to Projects</a></li>
+        </ul>
+    </nav>
+
+    <main class="case-study">
+        <header class="project-header">
+            <h1>PrimeCam Multi-Layer Insulation Installation</h1>
+            <p class="tech-stack">Keywords: Cryogenics | SolidWorks | Multi-Layer Insulation (MLI) | Thermal Management | CCAT Observatory</p>
+        </header>
+
+        <section class="project-content">
+            <h3>Introduction to PrimeCam and FYST</h3>
+            <p>The Fred Young Submillimeter Telescope (FYST) is a major international collaboration located on Cerro Chajnantor in the Atacama Desert in Chile. While the observatory is deployed in South America, its primary camera component, PrimeCam, was assembled at Cornell University. Working with the Niemack Group, I collaborated with a cross-functional team to assemble and test this complex hardware.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/primecamfull.png" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">PrimeCam Model in SolidWorks with no back plates.</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/primecamopen.png" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">Another angle of PrimeCam with the back plates removed. All layers minus the outermost room temperature shell and plates will be covered by MLI.</figcaption>
+                </figure>
+            </div>
+            <p>PrimeCam utilizes state of the art Kinetic-Inductance Detectors (KIDs) that require an extreme base thermal level of less than 100 millikelvin (-273.05&deg;C). To achieve this, the camera relies on multiple cooling units, including two Pulse Tube Cryocoolers and a Dilution Refrigerator. These cooling stages are enclosed within multiple nested vacuum shells, similar to Russian nesting dolls, for each temperature level. To protect each of these highly sensitive inner temperature stages from the thermal radiation emitted by the outer ones, we utilize Multi-Layer Insulation (MLI).</p>
+
+            <h3>Installation Process & Geometric Modeling</h3>
+            <p>MLI consists of stacks of reflective sheets designed to deflect radiation, with each sheet separated by a thin mesh netting to minimize conductive heat transfer. The standard sheets used in our lab contained 10 layers, and depending on the specific temperature stage being insulated, up to 30 layers of MLI were applied.</p>
+            <div class="image-row">
+                 <!-- First Image Column -->
+                <figure class="image-col">
+                    <img src="images/IMG_6461.jpeg" alt="KID System" class="alpha-img">
+                    <figcaption class="image-caption">MLI cutouts for the blankoffs for different temperature stages.</figcaption>
+                </figure>
+
+                <!-- Second Image Column -->
+                <figure class="image-col">
+                    <img src="images/modcamMLI.png" alt="PrimeCam Outer Shell" class="alpha-img">
+                    <figcaption class="image-caption">Scaled-down version of PrimeCam called ModCam with its back plate removed. The inner temperature stage is wrapped in MLI.</figcaption>
+                </figure>
+            </div>
+            <p>Applying this insulation required precise spatial planning. I analyzed the geometry of each individual PrimeCam component in SolidWorks, including the nested shells, front and back plates, and blank-offs, to determine the exact MLI coverage required for each temperature stage. For complex hardware geometries that required precise cutouts or mounting holes, we utilized a soldering iron to melt through the MLI. This technique allowed us to cleanly cut the base shapes while simultaneously fusing the edges of the mesh and reflective layers to prevent fraying.</p>
+
+            <h3>Implementation and Results</h3>
+            <p>When PrimeCam was finally sealed and cooled down, the thermal data confirmed that there were no issues with the MLI coverage. During the assembly process, any minor rips or tears in the delicate MLI were easily repaired using a specialized reflective tape that functioned identically to the primary reflective layers to ensure no radiation leaked through.</p>
+            
+            <p>This was my first project when I joined the CCAT/FYST collaboration. It served as an excellent introduction to SolidWorks, a software I would later become highly proficient in for more complex mechanical designs. More importantly, it familiarized me with the larger PrimeCam project as a whole, providing a foundational understanding of the critical importance of thermal insulation and radiation shielding in high-vacuum cryogenic environments.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: nikolasgianulis@gmail.com | (786)-608-5581</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
